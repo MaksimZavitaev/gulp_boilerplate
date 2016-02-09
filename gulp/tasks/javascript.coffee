@@ -16,3 +16,9 @@ gulp.task 'js:vendor', ->
     gulp.src src
     .pipe concat('vendor.js')
     .pipe gulp.dest config.build_path
+
+gulp.task 'js:vendor:min', ['js:vendor'], ->
+  gulp.src "#{config.build_path}/vendor.js"
+  .pipe uglify()
+  .pipe rename 'vendor.min.js'
+  .pipe gulp.dest config.build_path
