@@ -3,6 +3,7 @@ sass = require 'gulp-sass'
 file = require 'gulp-file'
 notify = require 'gulp-notify'
 cssmin = require 'gulp-cssmin'
+rename = require 'gulp-rename'
 config = global.config()
 
 gulp.task 'sass:bootstrap:compile', [], ->
@@ -30,11 +31,12 @@ gulp.task 'sass:bootstrap:compile', [], ->
     message: "Найти файл можно в #{config.build_path}<%= file.relative %>!"
   }
 
-gulp.task 'sass:bootstrap:minify', ['sass:bootstrap:compile'], ->
+gulp.task 'sass:bootstrap:minify', ->
   gulp.src "#{config.build_path}/bootstrap.css"
   .pipe cssmin()
-  .pipe gulp.dest "#{config.build_path}/min/"
+  .pipe rename 'bootstrap.min.css'
+  .pipe gulp.dest config.build_path
   .pipe notify {
     title  : "Файл скомпилирован"
-    message: "Найти файл можно в #{config.build_path}/min/<%= file.relative %>!"
+    message: "Найти файл можно в #{config.build_path}<%= file.relative %>!"
   }
