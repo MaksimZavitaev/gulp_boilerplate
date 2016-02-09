@@ -7,12 +7,12 @@ rename = require 'gulp-rename'
 config = global.config()
 
 gulp.task 'js:vendor', ->
-  src = ['./bower_components/jquery/dist/jquery.js'] if config.bootstrap.js isnt null
-
   if config.bootstrap.js isnt null
+    src = ['./bower_components/jquery/dist/jquery.js']
+
     for item in config.bootstrap.js
-      src.push item
+      src.push "bower_components/bootstrap-sass/assets/javascripts/bootstrap/#{item}.js"
 
     gulp.src src
-    .pipe concat()
+    .pipe concat('vendor.js')
     .pipe gulp.dest config.build_path

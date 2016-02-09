@@ -8,18 +8,12 @@ config = global.config()
 
 gulp.task 'sass:bootstrap:compile', [], ->
   src = ''
-  items = [
-    'variables'
-    'mixins'
-  ]
-
-  for item in items
+  for item in ['variables', 'mixins']
     src += "@import 'bootstrap/#{item}';\n"
 
-  for item in config.bootstrap
+  for item in config.bootstrap.css
     src += "@import 'bootstrap/#{item}';\n"
 
-  #noinspection JSUnresolvedVariable
   file('bootstrap.scss', src, {src: true})
   .pipe sass includePaths: './bower_components/bootstrap-sass/assets/stylesheets'
   .pipe gulp.dest config.build_path
