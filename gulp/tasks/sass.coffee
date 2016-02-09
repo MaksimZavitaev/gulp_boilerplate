@@ -11,9 +11,6 @@ gulp.task 'sass:bootstrap:compile', [], ->
   items = [
     'variables'
     'mixins'
-    'normalize'
-    'print'
-    'glyphicons'
   ]
 
   for item in items

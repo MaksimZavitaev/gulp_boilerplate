@@ -1,6 +1,10 @@
 ---
 build_path: './build/'
 bootstrap:
+# Reset and dependencies
+  - normalize
+  - print
+  - glyphicons
 # Core CSS
 #  - scaffolding
 #  - type
