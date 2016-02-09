@@ -1,48 +1,62 @@
 ---
 build_path: './build/'
 bootstrap:
-# Reset and dependencies
-  - normalize
-  - print
-  - glyphicons
-# Core CSS
-#  - scaffolding
-#  - type
-  - code
-#  - grid
-#  - tables
-  - forms
-#  - buttons
+  js:
+#    - affix
+#    - alert
+#    - button
+#    - carousel
+#    - collapse
+#    - dropdown
+#    - modal
+#    - scrollspy
+#    - tab
+#    - transition
+#    - tooltip
+#    - popover
+  css:
+    # Reset and dependencies
+    - normalize
+    - print
+#    - glyphicons
+  # Core CSS
+#    - scaffolding
+  #  - type
+    - code
+#    - grid
+#    - tables
+    - forms
+#    - buttons
 
-# Components
-#  - component-animations
-#  - dropdowns
-#  - button-groups
-#  - input-groups
-#  - navs
-#  - navbar
-#  - breadcrumbs
-#  - pagination
-#  - pager
-#  - labels
-#  - badges
-#  - jumbotron
-#  - thumbnails
-#  - alerts
-#  - progress-bars
-#  - media
-#  - list-group
-#  - panels
-#  - responsive-embed
-#  - wells
-#  - close
+    # Components
+#    - component-animations
+#    - dropdowns
+#    - button-groups
+#    - input-groups
+#    - navs
+#    - navbar
+#    - breadcrumbs
+#    - pagination
+#    - pager
+#    - labels
+#    - badges
+#    - jumbotron
+#    - thumbnails
+#    - alerts
+#    - progress-bars
+#    - media
+#    - list-group
+#    - panels
+#    - responsive-embed
+#    - wells
+#    - close
 
-# Components w/ JavaScript
-#  - modals
-#  - tooltip
-#  - popovers
-#  - carousel
+    # Components w/ JavaScript
+#    - modals
+#    - tooltip
+#    - popovers
+#    - carousel
 
-# Utility classes
-#  - utilities
-  - responsive-utilities
+    # Utility classes
+#    - utilities
+    - responsive-utilities
