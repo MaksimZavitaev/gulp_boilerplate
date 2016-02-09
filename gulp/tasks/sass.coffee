@@ -20,7 +20,7 @@ gulp.task 'sass:bootstrap:compile', [], ->
     src += "@import 'bootstrap/#{item}';\n"
 
   #noinspection JSUnresolvedVariable
-  file('bootstrap.scss', src)
+  file('bootstrap.scss', src, {src: true})
   .pipe sass includePaths: './bower_components/bootstrap-sass/assets/stylesheets'
   .pipe gulp.dest config.build_path
   .pipe notify {
@@ -28,7 +28,7 @@ gulp.task 'sass:bootstrap:compile', [], ->
     message: "Найти файл можно в #{config.build_path}<%= file.relative %>!"
   }
 
-gulp.task 'sass:bootstrap:minify', ->
+gulp.task 'sass:bootstrap:minify', ['sass:bootstrap:compile'], ->
   gulp.src "#{config.build_path}/bootstrap.css"
   .pipe cssmin()
   .pipe rename 'bootstrap.min.css'
