@@ -23,7 +23,7 @@ gulp.task 'sass:bootstrap:compile', [], ->
   }
 
 gulp.task 'sass:bootstrap:minify', ['sass:bootstrap:compile'], ->
-  gulp.src "#{config.build_path}/bootstrap.css"
+  gulp.src "#{config.build_path}bootstrap.css"
   .pipe cssmin()
   .pipe rename 'bootstrap.min.css'
   .pipe gulp.dest config.build_path
