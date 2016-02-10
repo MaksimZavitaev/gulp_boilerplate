@@ -16,18 +16,18 @@ gulp.task 'sass:bootstrap:compile', [], ->
 
   file('bootstrap.scss', src, {src: true})
   .pipe sass includePaths: './bower_components/bootstrap-sass/assets/stylesheets'
-  .pipe gulp.dest config.build_path
+  .pipe gulp.dest config.build_path + config.css_folder
   .pipe notify {
     title  : "Файл скомпилирован"
-    message: "Найти файл можно в #{config.build_path}<%= file.relative %>!"
+    message: "Найти файл можно в #{config.build_path + config.css_folder}/<%= file.relative %>!"
   }
 
 gulp.task 'sass:bootstrap:minify', ['sass:bootstrap:compile'], ->
-  gulp.src "#{config.build_path}bootstrap.css"
+  gulp.src "#{config.build_path + config.css_folder}/bootstrap.css"
   .pipe cssmin()
   .pipe rename 'bootstrap.min.css'
-  .pipe gulp.dest config.build_path
+  .pipe gulp.dest config.build_path + config.css_folder
   .pipe notify {
     title  : "Файл скомпилирован"
-    message: "Найти файл можно в #{config.build_path}<%= file.relative %>!"
+    message: "Найти файл можно в #{config.build_path + config.css_folder}/<%= file.relative %>!"
   }

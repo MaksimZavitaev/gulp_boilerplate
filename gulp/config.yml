@@ -1,5 +1,7 @@
 ---
 build_path: './build/'
+css_folder: 'css'
+js_folder: 'js'
 bootstrap:
   js:
 #    - affix
