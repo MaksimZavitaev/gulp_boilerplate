@@ -24,8 +24,8 @@ bootstrap:
   # Core CSS
 #    - scaffolding
   #  - type
-    - code
-#    - grid
+#    - code
+    - grid
 #    - tables
     - forms
 #    - buttons
