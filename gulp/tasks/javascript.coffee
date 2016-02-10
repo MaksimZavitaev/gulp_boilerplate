@@ -24,7 +24,10 @@ gulp.task 'js:bootstrap:minify', ['js:bootstrap'], ->
 
 gulp.task 'js:vendor', ['js:bootstrap'], ->
   if config.bootstrap.js isnt null
-    src = ['./bower_components/jquery/dist/jquery.js']
+    src = [
+      './bower_components/jquery/dist/jquery.js',
+      "#{config.bootstrap.js}bootstrap.js"
+    ]
 
     gulp.src src
     .pipe concat('vendor.js')
